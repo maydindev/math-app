@@ -13,7 +13,7 @@ const MathExercise = () => {
   const [started, setStarted] = useState(false);
   const [finished, setFinished] = useState(false);
   const [spokenText, setSpokenText] = useState("");
-  const [countdown, setCountdown] = useState(5);
+  const [countdown, setCountdown] = useState(10);
   const [operation, setOperation] = useState("karışık");
   const [currentOperation, setCurrentOperation] = useState("");
   const recognitionRef = useRef(null);
@@ -69,7 +69,7 @@ const MathExercise = () => {
     setCurrentOperation(selectedOperation);
     setUserAnswer("");
     setMessage("");
-    setCountdown(5);
+    setCountdown(10);
   };
 
   const calculateAnswer = () => {
@@ -201,7 +201,7 @@ const MathExercise = () => {
 
     const timeout = setTimeout(() => {
       handleTimeout();
-    }, 5000);
+    }, 10000);
     timeoutIdRef.current = timeout;
 
     countdownRef.current = setInterval(() => {
