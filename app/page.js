@@ -223,16 +223,16 @@ const MathExercise = () => {
   }, [num1, num2, started]);
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-gray-500 rounded-xl shadow-lg text-center">
+    <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg text-center">
       <h1 className="text-2xl font-bold text-orange-400 mb-4">Dört İşlem Alıştırması</h1>
 
       {!started && !finished && (
         <div className="mb-4">
-          <label className="text-white mr-2">İşlem Türü:</label>
+          <label className="text-black mr-2">İşlem Türü:</label>
           <select
             value={operation}
             onChange={(e) => setOperation(e.target.value)}
-            className="px-2 py-1 rounded"
+            className="px-2 py-1 rounded text-black"
           >
             <option value="toplama">Toplama</option>
             <option value="çıkarma">Çıkarma</option>
@@ -246,7 +246,7 @@ const MathExercise = () => {
       {!started && (
         <button
           onClick={handleStart}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-blue-200 text-black px-4 py-2 rounded hover:bg-blue-400"
         >
           Başla
         </button>
@@ -268,13 +268,13 @@ const MathExercise = () => {
             onKeyDown={handleKeyDown}
             className="border px-2 py-1 mb-2"
           />
-          <p className="text-sm mt-5 text-white">
+          <p className="text-sm mt-5 text-black">
             🕔 {countdown} saniyeniz var. Cevabınızı sesli söyleyin veya yazın.
           </p>
         </div>
       )}
 
-      <p className="mt-4 text-lg font-semibold">{message}</p>
+      <p className="mt-4 text-lg text-black font-semibold">{message}</p>
       {started && <p className="mt-4 mb-4">Son Söylenen: "{spokenText}"</p>}
       {questionCount > 0 && (
         <p className="text-red-400 text-2xl mt-4 font-bold">
