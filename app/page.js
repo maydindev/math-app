@@ -1,5 +1,5 @@
 "use client";
-/*qqq*/
+
 import React, { useState, useRef, useEffect } from "react";
 
 const MathExercise = () => {
@@ -10,10 +10,11 @@ const MathExercise = () => {
   const [score, setScore] = useState(0);
   const [questionCount, setQuestionCount] = useState(0);
   const maxQuestions = 10;
+  const maxSecond = 10;
   const [started, setStarted] = useState(false);
   const [finished, setFinished] = useState(false);
   const [spokenText, setSpokenText] = useState("");
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(maxSecond);
   const [operation, setOperation] = useState("karışık");
   const [currentOperation, setCurrentOperation] = useState("");
   const recognitionRef = useRef(null);
@@ -69,7 +70,7 @@ const MathExercise = () => {
     setCurrentOperation(selectedOperation);
     setUserAnswer("");
     setMessage("");
-    setCountdown(10);
+    setCountdown(maxSecond);
   };
 
   const calculateAnswer = () => {
@@ -100,7 +101,7 @@ const MathExercise = () => {
           setQuestionCount((prev) => prev + 1);
           askQuestion();
         } else {
-          setQuestionCount(10);
+          setQuestionCount(maxQuestions);
           setMessage("🎉 Tebrikler! Tüm sorular tamamlandı.");
           setFinished(true);
           setStarted(false);
@@ -201,7 +202,7 @@ const MathExercise = () => {
 
     const timeout = setTimeout(() => {
       handleTimeout();
-    }, 10000);
+    }, maxSecond*1000);
     timeoutIdRef.current = timeout;
 
     countdownRef.current = setInterval(() => {
