@@ -24,7 +24,7 @@ export default function MentalMathGame() {
   const timeoutIdRef = useRef(null);
   const answeredRef = useRef(false); // cevap verildi mi
 
-  const maxSecond = customTime;
+  const maxSecond = 5;
 
   useEffect(() => {
     if (!started) return;
@@ -126,7 +126,7 @@ export default function MentalMathGame() {
 
     setTimeout(() => {
       generateNumbers();
-    }, 3000);
+    }, 1000);
   };
 
   const handleEndGame = () => {
@@ -271,7 +271,7 @@ export default function MentalMathGame() {
             {correct === false && (
               <>
                 <span className="text-red-600 font-bold">❌ Yanlış!</span>
-                <div className="text-green-500">Doğru Cevap {/*num1*/} {/*operation*/} {/*num2*/} = {eval(`${num1} ${operation} ${num2}`)}</div>
+                <div className="text-green-500 text-2xl font-bold">Doğru Cevap {/*num1*/} {/*operation*/} {/*num2*/} = {eval(`${num1} ${operation} ${num2}`)}</div>
               </>
             )}
           </div>
