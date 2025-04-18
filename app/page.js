@@ -10,7 +10,7 @@ export default function MentalMathGame() {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [operation, setOperation] = useState('+');
-  const [selectedOperation, setSelectedOperation] = useState('random');
+  const [selectedOperation, setSelectedOperation] = useState('+');
   const [answer, setAnswer] = useState('');
   const [correct, setCorrect] = useState(null);
   const [started, setStarted] = useState(false);
@@ -24,7 +24,7 @@ export default function MentalMathGame() {
   const timeoutIdRef = useRef(null);
   const answeredRef = useRef(false); // cevap verildi mi
 
-  const maxSecond = 10;
+  const maxSecond = countdown;
 
   useEffect(() => {
     if (!started) return;
@@ -209,6 +209,7 @@ export default function MentalMathGame() {
               id="customTime"
               type="number"
               value={customTime}
+              placeholder={countdown}
               onChange={(e) => setCustomTime(e.target.value)}
               className="p-2 border rounded w-16 text-sm ml-4"
               min="1"
