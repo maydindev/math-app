@@ -259,12 +259,12 @@ export default function MentalMathGame() {
             className="w-full px-4 py-2 border rounded mb-4 text-center text-lg"
           />
 
-          <button
+          {/*<button
             onClick={handleAnswer}
             className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
           >
             Cevapla
-          </button>
+          </button>*/}
 
           <div className="mt-4 text-lg">
             {correct === true && <span className="text-green-600 font-bold">✅ Doğru!</span>}
