@@ -24,7 +24,7 @@ export default function MentalMathGame() {
   const timeoutIdRef = useRef(null);
   const answeredRef = useRef(false); // cevap verildi mi
 
-  const maxSecond = customTime;
+  const maxSecond = 10;
 
   useEffect(() => {
     if (!started) return;
