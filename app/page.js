@@ -178,13 +178,13 @@ export default function MentalMathGame() {
               id="operationSelect"
               value={selectedOperation}
               onChange={(e) => setSelectedOperation(e.target.value)}
-              className="p-2 border rounded text-sm"
+              className="p-2 border rounded text-sm ml-10"
             >
-              <option value="random">Karışık</option>
               <option value="+">Toplama</option>
               <option value="-">Çıkarma</option>
               <option value="*">Çarpma</option>
               <option value="/">Bölme</option>
+              <option value="random">Karışık</option>
             </select>
           </div>
 
@@ -194,7 +194,7 @@ export default function MentalMathGame() {
               id="difficultySelect"
               value={difficulty}
               onChange={(e) => setDifficulty(parseInt(e.target.value))}
-              className="p-2 border rounded text-sm"
+              className="p-2 border rounded text-sm ml-1"
             >
               <option value={1}>Kolay (1 haneli)</option>
               <option value={2}>Orta (2 haneli)</option>
@@ -210,12 +210,12 @@ export default function MentalMathGame() {
               type="number"
               value={customTime}
               onChange={(e) => setCustomTime(e.target.value)}
-              className="p-2 border rounded text-sm"
+              className="p-2 border rounded w-16 text-sm ml-4"
               min="1"
             />
           </div>
 
-          <div className="flex items-center justify-center mb-4 gap-2">
+          {/*<div className="flex items-center justify-center mb-4 gap-2">
             <label htmlFor="voice-toggle" className="text-black">🎤 Sesli Yanıt</label>
             <input
               id="voice-toggle"
@@ -231,11 +231,11 @@ export default function MentalMathGame() {
                 }
               }}
             />
-          </div>
+          </div>*/}
 
           <button
             onClick={handleStart}
-            className="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+            className="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition ml-33"
           >
             Başla
           </button>
